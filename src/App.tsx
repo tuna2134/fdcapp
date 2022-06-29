@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { invoke } from '@tauri-apps/api/tauri'
 
 function App() {
+  function executeCommand() {
+    invoke("simple_command");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={executeCommand}>click</button>
       </header>
     </div>
   );
